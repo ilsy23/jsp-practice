@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
@@ -13,15 +13,15 @@
 	
 	<c:choose>
 		<c:when test="${id == null}">
-			<%-- ���ʿ� �α����� ���ߴ���, �α��� �ð��� ���� --%>
-			<h3>�ð��� ���� �ڵ� �α׾ƿ� ó���Ǿ����ϴ�.</h3>
+			<%-- 애초에 로그인을 안했던지, 로그인 시간이 만료 --%>
+			<h3>시간이 지나 자동 로그아웃 처리되었습니다.</h3>
 		</c:when>
 		<c:otherwise>
-			<h3>${id}�� ȯ���մϴ�!</h3>
+			<h3>${id}님 환영합니다!</h3>
 		</c:otherwise>
 	</c:choose>
 	
-	<a href="cookie_login.jsp">�α��� ȭ������</a>
+	<a href="cookie_login.jsp">로그인 화면으로</a>
 	
 </body>
 </html>

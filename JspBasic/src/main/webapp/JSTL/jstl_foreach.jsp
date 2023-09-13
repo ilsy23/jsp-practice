@@ -1,6 +1,6 @@
 <%@page import="java.util.Arrays"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -11,9 +11,9 @@
 <body>
 
 	<%--
-		<c:set> ÅÂ±×´Â º¯¼öÀÇ »ý¼º°ú µ¿½Ã¿¡, ÀÌ¹Ì µ¿ÀÏÇÑ ÀÌ¸§ÀÇ µ¥ÀÌÅÍ°¡ Á¸ÀçÇÑ´Ù¸é
-		±âÁ¸ÀÇ µ¥ÀÌÅÍ¸¦ Áö¸ñÇØ¼­ °ªÀ» º¯°æÇÒ ¶§µµ »ç¿ëÇÕ´Ï´Ù.
-		¸¶Ä¡ setAttribute()¿¡¼­ ÀÌ¹Ì Á¸ÀçÇÏ´Â ÀÌ¸§À» Áö¸ñÇÏ¿© °ªÀ» º¯°æÇÏ´Â °ÍÃ³·³.
+		<c:set> íƒœê·¸ëŠ” ë³€ìˆ˜ì˜ ìƒì„±ê³¼ ë™ì‹œì—, ì´ë¯¸ ë™ì¼í•œ ì´ë¦„ì˜ ë°ì´í„°ê°€ ì¡´ìž¬í•œë‹¤ë©´
+		ê¸°ì¡´ì˜ ë°ì´í„°ë¥¼ ì§€ëª©í•´ì„œ ê°’ì„ ë³€ê²½í•  ë•Œë„ ì‚¬ìš©í•©ë‹ˆë‹¤.
+		ë§ˆì¹˜ setAttribute()ì—ì„œ ì´ë¯¸ ì¡´ìž¬í•˜ëŠ” ì´ë¦„ì„ ì§€ëª©í•˜ì—¬ ê°’ì„ ë³€ê²½í•˜ëŠ” ê²ƒì²˜ëŸ¼.
 	 --%>
 
 	<c:set var="total" value="0" />
@@ -21,31 +21,31 @@
 		<c:set var="total" value="${total + i}" />
 	</c:forEach>
 
-	<h4>1ºÎÅÍ 100±îÁöÀÇ ´©ÀûÇÕ: ${total}</h4>
+	<h4>1ë¶€í„° 100ê¹Œì§€ì˜ ëˆ„ì í•©: ${total}</h4>
 
 	<hr>
 
-	<%-- <h4>±¸±¸´Ü 4´Ü</h4>
+	<%-- <h4>êµ¬êµ¬ë‹¨ 4ë‹¨</h4>
 	<% for(int hang=1; hang<=9; hang++) { %>
 		4 x <%=hang %> = <%=4*hang %>
 	<% } %> --%>
 	
-	<c:forEach var="hang" begin="1"	end="9"> <%-- step »ý·« ½Ã ÀÚµ¿À¸·Î 1·Î Ã³¸®µÊ --%>
-		4 ¡¿ ${hang} = ${4 * hang} <br>
+	<c:forEach var="hang" begin="1"	end="9"> <%-- step ìƒëžµ ì‹œ ìžë™ìœ¼ë¡œ 1ë¡œ ì²˜ë¦¬ë¨ --%>
+		4 Ã— ${hang} = ${4 * hang} <br>
 	</c:forEach>
 	
 	<hr>
 	
-	<%-- ±¸±¸´ÜÀ» 2~9´Ü±îÁö Ãâ·ÂÇÏ´Âµ¥, Â¦¼ö´Ü¸¸ Ãâ·ÂÇØ º¸¼¼¿ä. (jstl, el) --%>
+	<%-- êµ¬êµ¬ë‹¨ì„ 2~9ë‹¨ê¹Œì§€ ì¶œë ¥í•˜ëŠ”ë°, ì§ìˆ˜ë‹¨ë§Œ ì¶œë ¥í•´ ë³´ì„¸ìš”. (jstl, el) --%>
 	<c:forEach var="dan" begin="2" end="9" step="2">
-		<h4>±¸±¸´Ü ${dan}´Ü</h4>
+		<h4>êµ¬êµ¬ë‹¨ ${dan}ë‹¨</h4>
 		<c:forEach var="hang" begin="1" end="9">
-			${dan} ¡¿ ${hang} = ${dan * hang}<br>
+			${dan} Ã— ${hang} = ${dan * hang}<br>
 		</c:forEach>
 		${'-------------------------------'}
 	</c:forEach>
 	
-	<h2>¹è¿­ÀÌ³ª ÄÃ·º¼Ç ³»ºÎÀÇ °ªÀ» Ãâ·Â</h2>
+	<h2>ë°°ì—´ì´ë‚˜ ì»¬ë ‰ì…˜ ë‚´ë¶€ì˜ ê°’ì„ ì¶œë ¥</h2>
 	
 	<c:set var="arr" value="<%=new int[] {1, 3, 5, 7, 9} %>" />
 	
@@ -55,7 +55,7 @@
 	
 	<hr>
 	
-	<c:set var="nameList" value='<%=Arrays.asList("È«±æµ¿", "±èÃ¶¼ö", "¹Ú¿µÈñ", "±è¸Þ·Õ") %>'></c:set>
+	<c:set var="nameList" value='<%=Arrays.asList("í™ê¸¸ë™", "ê¹€ì² ìˆ˜", "ë°•ì˜í¬", "ê¹€ë©”ë¡±") %>'></c:set>
 	
 	<c:forEach var="name" items="${nameList}">
 		${name} <br>
