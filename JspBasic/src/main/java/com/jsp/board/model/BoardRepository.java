@@ -28,5 +28,20 @@ public class BoardRepository {
 		return boardList;
 	}
 	
+	//글번호로 특정 게시물 객체를 리턴하는 메서드
+	public BoardVO getContent(int bId) {
+		return boardList.get(bId-1);
+	}
 	
+	//객체 수정 메서드
+	public void update(int bId, BoardVO vo) {
+		boardList.set(bId-1, vo);
+	}
+	
+	//객체 삭제 메서드
+	public void delete(int bId) {
+		boardList.remove(bId-1);
+	}
+	
+
 }
